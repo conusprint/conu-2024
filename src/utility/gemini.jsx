@@ -6,7 +6,7 @@ const GetTravelPlan = ({ location, age, interests, startDate, endDate }) => {
     const [streamComplete, setStreamComplete] = useState(false); // New state variable
 
     var prompt = `
-    Give me a travel itenery to greek.
+    Give me a travel itenery to ` + location + `.
 
     I am ` + age + ` year old.
 
@@ -82,7 +82,7 @@ const GetTravelPlan = ({ location, age, interests, startDate, endDate }) => {
     return streamComplete ? (
         <div>
             {days.map((day, index) => (
-                <div className='bg-slate-500 m-3' key={index}>
+                <div className='bg-indigo-500 text-white' key={index}>
                     <h3>{day.split('\n')[0]}</h3> {/* Day title */}
                     <div>{renderTextWithLineBreaks(day.split('\n').slice(1).join('\n'))}</div> {/* Day's activities */}
                 </div>
